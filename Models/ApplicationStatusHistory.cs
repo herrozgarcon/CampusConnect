@@ -1,0 +1,25 @@
+using CampusConnect.Models.Enum;
+
+namespace CampusConnect.Models;
+
+public class ApplicationStatusHistory
+{
+    public int HistoryId { get; set; }
+
+    public int ApplicationId { get; set; }
+
+    public JobApplicationStatus? PreviousStatus { get; set; }
+
+    public JobApplicationStatus NewStatus { get; set; }
+
+    public string UpdatedByUserId { get; set; } = string.Empty;
+
+    public string? Remarks { get; set; }
+
+    public DateTime UpdatedAt { get; set; }
+
+    // Navigation properties
+    public JobApplication JobApplication { get; set; } = null!;
+
+    public ApplicationUser UpdatedByUser { get; set; } = null!;
+}
